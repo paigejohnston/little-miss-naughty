@@ -3,8 +3,163 @@
   [property]: [value];
 }
 
-/* Global Styles go here */
-body {
-  background: white;
-  color: black;
+html {
+
+  height:200%;
 }
+/* Global Styles go here. TEXT ALIGN not working and HEIGHT of gadient background*/
+.body {
+  margin: 0;
+  padding: 0;
+  height:200%;
+  overflow: scroll;
+  position: relative;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight:bold;
+  text-align: center;
+}
+
+body {
+  cursor: url("../assets/lmn-cursor-png.png") 0 0, pointer;
+}
+
+
+.marquee-container {
+  margin:0;
+  padding:0;
+  height:200%;
+  width:8%;
+  font-size: 35pt;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight:bold;
+  text-decoration-color: #663190;
+  text-align: center;
+  background-color:white;
+  background-size:200%;
+  position:absolute;
+  right:0;
+  top:0;
+
+}
+
+marquee {
+  overflow: hidden;
+  height:100%;
+}
+
+p {
+  color: #663190;
+  text-align: center;
+}
+
+/* Images are placed */
+
+
+
+
+/* Gradient changing background */
+
+:root {
+  --font-title: 24px;
+  --grad-start: 280;
+  --grad-end:   40;
+}
+
+body {
+  display:         flex;
+  justify-content: center;
+  align-items:     center;
+  margin:0;
+  height:  100vh;
+
+  background: linear-gradient(
+    135deg,
+    hsl(var(--grad-start), 100%, 75%),
+    hsl(var(--grad-end), 100%, 50%)
+  )
+}
+
+.p {
+  counter-reset:
+    hueStart var(--grad-start)
+    hueEnd var(--grad-end);
+
+  position:       relative;
+  padding:        5px 10px;
+  border:         1px solid currentColor;
+  border-radius:  var(--font-title);
+  font:           100 var(--font-title)/1 sans-serif;
+  text-align:     center;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color:          #fff;
+
+  &::before, &::after {
+    position:             absolute;
+    display:              block;
+    width:                100%;
+    padding:              5px;
+    font-size:            12px;
+    font-variant-numeric: tabular-nums;
+    color:                #fff;
+  }
+
+  &::before {
+    content: 'hsl(' counter(hueStart) ', 100%, 75%)';
+    bottom:  100%;
+  }
+  &::after {
+    content: 'hsl(' counter(hueEnd) ', 100%, 50%)';
+    top:     100%;
+  }
+}
+
+/* Gradient changing background ENDS */
+
+/* FALLING FLOWERS -not working */
+
+.flower-container {
+  position: absolute;
+  height: 500px;
+  width: 100%;
+  max-width: 100%;
+  top: 0;
+  overflow: hidden;
+  z-index: 2;
+  }
+
+.flower {
+  $foreground-speed: 15s;
+  $middleground-speed: 20s;
+  $background-speed: 30s;
+  display: block;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translate3d(0,-100%,0)
+  animation: snow linear infinite
+  &.foreground
+    background-image: url('/Users/paigejohnston/Projects/paigejohnston/little-miss-naughty/assets/flower-giff-rotate.gif')
+    animation-duration: $foreground-speed
+    &.layered
+      animation-delay: $foreground-speed/2
+  &.middleground
+    background-image: image-url('/Users/paigejohnston/Projects/paigejohnston/little-miss-naughty/assets/flower-giff-rotate.gif')
+    animation-duration: $middleground-speed
+    &.layered
+      animation-delay: $middleground-speed/2
+  &.background
+    background-image: image-url('/Users/paigejohnston/Projects/paigejohnston/little-miss-naughty/assets/flower-giff-rotate.gif')
+    animation-duration: $background-speed
+    &.layered
+      animation-delay: $background-speed/2
+
+@keyframes snow
+  0%
+    transform: translate3d(0,-100%,0)
+  100%
+    transform: translate3d(15%,100%,0)
+    }
