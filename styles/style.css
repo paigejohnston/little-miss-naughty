@@ -40,7 +40,6 @@ body {
   background-color:white;
   position:absolute;
   right:0;
-
 }
 
 marquee {
@@ -53,9 +52,16 @@ marquee {
   position:relative;
 }
 
-p {
-  color: #663190;
+.lm-text {
   text-align: center;
+}
+
+.lm-text--purple {
+  color: #663190;
+}
+
+.lm-text--black {
+  color: #000;
 }
 
 /* Marquee ENDS */
