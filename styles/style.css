@@ -6,45 +6,51 @@
 html {
 
   height:200%;
+  margin:0;
 }
 /* Global Styles go here. TEXT ALIGN not working and HEIGHT of gadient background*/
 .body {
   margin: 0;
   padding: 0;
   height:200%;
-  overflow: scroll;
-  position: relative;
+  overflow: hidden;
+  position: absolute;
   font-family: Arial, Helvetica, sans-serif;
   font-weight:bold;
   text-align: center;
 }
 
+/* CURSOR */
+
 body {
   cursor: url("../assets/lmn-cursor-png.png") 0 0, pointer;
 }
 
-
+/* Marquee */
 .marquee-container {
   margin:0;
   padding:0;
-  height:200%;
-  width:8%;
+  height:200vh;
+  width:8vh;
   font-size: 35pt;
   font-family: Arial, Helvetica, sans-serif;
   font-weight:bold;
   text-decoration-color: #663190;
   text-align: center;
   background-color:white;
-  background-size:200%;
   position:absolute;
   right:0;
-  top:0;
 
 }
 
 marquee {
-  overflow: hidden;
-  height:100%;
+  padding:0;
+  margin: 0;
+  overflow: visable;
+  height:100vh;
+  text-align: center;
+  height:200vh;
+  position:relative;
 }
 
 p {
@@ -52,10 +58,110 @@ p {
   text-align: center;
 }
 
-/* Images are placed */
+/* Marquee ENDS */
+
+
+/* Images/Gifs are placed */
+
+.flower-container {
+  width:20%;
+  height:20%;
+  position:absolute;
+  top:3%;
+  z-index: auto;
+}
+
+.img {
+  position:relative;
+  margin:0;
+  padding:0;
+
+}
+
+.flower-container2 {
+  width:20%;
+  height:20%;
+  position:absolute;
+  top:20%;
+  right:30%;
+  z-index: auto;
+}
+
+.img2 {
+  position:relative;
+  margin:0;
+  padding:0;
+
+}
+
+.flower-container3 {
+  width:20%;
+  height:20%;
+  position:absolute;
+  top:50%;
+  left:10%;
+  z-index: auto;
+}
+
+.img3 {
+  position:relative;
+  margin:0;
+  padding:0;
+
+}
+
+.flower-container4 {
+  width:20%;
+  height:20%;
+  position:absolute;
+  top:70%;
+  left:50%;
+  z-index: auto;
+}
+
+.img4 {
+  position:relative;
+  margin:0;
+  padding:0;
+
+}
+
+.flower-container5 {
+  width:20%;
+  height:20%;
+  position:absolute;
+  top:100%;
+  left:60%;
+  z-index: auto;
+}
+
+.img5 {
+  position:relative;
+  margin:0;
+  padding:0;
+
+}
+
+.flower-container6 {
+  width:20%;
+  height:20%;
+  position:absolute;
+  top:150%;
+  left:40%;
+  z-index: auto;
+}
+
+.img6 {
+  position:relative;
+  margin:0;
+  padding:0;
+
+}
 
 
 
+
+/* Images/Giffs END */
 
 /* Gradient changing background */
 
@@ -70,7 +176,7 @@ body {
   justify-content: center;
   align-items:     center;
   margin:0;
-  height:  100vh;
+  height:  200vh;
 
   background: linear-gradient(
     135deg,
@@ -115,51 +221,3 @@ body {
 }
 
 /* Gradient changing background ENDS */
-
-/* FALLING FLOWERS -not working */
-
-.flower-container {
-  position: absolute;
-  height: 500px;
-  width: 100%;
-  max-width: 100%;
-  top: 0;
-  overflow: hidden;
-  z-index: 2;
-  }
-
-.flower {
-  $foreground-speed: 15s;
-  $middleground-speed: 20s;
-  $background-speed: 30s;
-  display: block;
-  position: absolute;
-  z-index: 2;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  transform: translate3d(0,-100%,0)
-  animation: snow linear infinite
-  &.foreground
-    background-image: url('/Users/paigejohnston/Projects/paigejohnston/little-miss-naughty/assets/flower-giff-rotate.gif')
-    animation-duration: $foreground-speed
-    &.layered
-      animation-delay: $foreground-speed/2
-  &.middleground
-    background-image: image-url('/Users/paigejohnston/Projects/paigejohnston/little-miss-naughty/assets/flower-giff-rotate.gif')
-    animation-duration: $middleground-speed
-    &.layered
-      animation-delay: $middleground-speed/2
-  &.background
-    background-image: image-url('/Users/paigejohnston/Projects/paigejohnston/little-miss-naughty/assets/flower-giff-rotate.gif')
-    animation-duration: $background-speed
-    &.layered
-      animation-delay: $background-speed/2
-
-@keyframes snow
-  0%
-    transform: translate3d(0,-100%,0)
-  100%
-    transform: translate3d(15%,100%,0)
-    }
