@@ -71,7 +71,7 @@ p {
   z-index: auto;
 }
 
-.img {
+.img1 {
   position:relative;
   margin:0;
   padding:0;
@@ -152,6 +152,69 @@ p {
 }
 
 .img6 {
+  position:relative;
+  margin:0;
+  padding:0;
+
+}
+
+/* rotating flowers END*/
+
+.falling-flower {
+  width:30%;
+  animation: falling-flower 6s infinite;
+}
+
+@keyframes falling-flower {
+  0% {
+    margin-left: 30vw;
+    margin-top: 0;
+    transform: rotate(25deg) scale(1);
+}
+
+  25% {
+    margin-left:50vw;
+    margin-top:20%;
+    transform: rotate(25deg) scale(1);
+  }
+
+  50% {
+    margin-left:120vw;
+    margin-top:10%;
+    transform: rotate(0deg) scale(1);
+  }
+
+  51% {
+    transform: rotate(0deg) scale(-1);
+  }
+
+  75% {
+    margin-left:50vw;
+    margin-top:15%;
+    transform: rotate(25deg) scale(-1);
+  }
+
+  100% {
+    margin-left:30vw;
+    margin-top:0%;
+    transform: rotate(0deg) scale(-1);
+  }
+}
+
+
+
+/* NOT WORKING */
+.lmc-container {
+  width:80%;
+  height:80%;
+  position:absolute;
+  top:15%;
+  right:10%;
+  z-index: auto;
+  background-color: ;
+}
+
+.img7 {
   position:relative;
   margin:0;
   padding:0;
