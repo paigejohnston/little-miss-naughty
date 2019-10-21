@@ -1,0 +1,128 @@
+/* Format for applying styling rules */
+[selector] {
+  [property]: [value];
+}
+
+.html {
+height:100%;
+margin:0;
+}
+
+.body {
+  margin: 0;
+  padding: 0;
+  height:100%;
+  overflow: hidden;
+  position: absolute;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight:bold;
+  text-align: center;
+}
+
+/* CURSORS */
+.body {
+  cursor: url("../assets/lmn-cursor-home.png") 0 0, pointer;
+}
+
+.body :hover {
+  cursor: url("../assets/lmn-cursor-png.png") 0 0, pointer;
+}
+
+/* CURSORS END */
+
+/* IMAGES/GIFFS */
+
+.flower-container {
+  width:20%;
+  height:20%;
+  position:absolute;
+  top:3%;
+  z-index: auto;
+}
+
+.img1 {
+  position:relative;
+  margin:0;
+  padding:0;
+
+}
+
+#draggable {
+  padding: 25px;
+  background: green;
+  color: black;
+  width: 200px;
+  height: 200px;
+  line-height: 200px;
+  white-space: nowrap;
+  text-align: center;
+  cursor: move;
+  &:hover {
+    background: purple;
+  }
+}
+
+/* IMAGES/GIFFS ENDS */
+
+/* Marquee */
+.marquee-container {
+  margin:0;
+  padding:0;
+  height: 100vh;
+  /* // Defines the width of the marquee */
+  width: 100vw;
+  font-size: 35pt;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight:bold;
+  text-decoration-color: #663190;
+  text-align: center;
+  background-color:pink;
+  position:fixed;
+  top: 0;
+  right: 0;
+}
+
+.marquee {
+  padding:0;
+  margin: 0;
+  overflow: hidden;
+  height:100vh;
+  text-align: center;
+  height:200vh;
+  position:relative;
+  animation: marquee linear infinite;
+}
+
+.lm-text {
+  text-align: center;
+}
+
+.lm-text--purple {
+  color: #663190;
+}
+
+.lm-text--black {
+  color: #000;
+}
+
+.book-1 {
+  position: absolute;
+  width: 20%;
+  height: 70%;
+
+}
+
+.book-1--spine {
+  position: relative;
+  width: 5vw;
+  height: 70vh;
+  background-color: black;
+
+}
+
+.book-1--cover {
+  position: relative;
+  width: 15vw;
+  height: 70vh;
+  background-color: purple;
+}
