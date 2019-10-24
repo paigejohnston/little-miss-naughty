@@ -87,32 +87,6 @@ body :hover {
 
 
 
-$pageBgColor: #151a24;
-
-body, html {
-  background-color:$pageBgColor;
-}
-
-.clip-svg {
- width:30%;
- height:550px;
-  animation: move 4s alternate infinite linear;
-  //border:1px solid yellow;
-  //border-radius:40px;
-  //filter: blur(20px);
-  background: linear-gradient(to left, blue 0%, purple 50%, green 100%);
-
-}
-
-@keyframes move {
-  from {
-    background-position: 800px;
-  }
-
-  to {
-    background-positon: 800px;
-  }
-}
 
 .lmn-menu {
   width: 100%;

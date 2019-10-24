@@ -168,7 +168,7 @@ marquee {
 .flower2-container--3 {
   left: 30%;
   transform: rotate(60deg);
-  animation: flower2-falling 15s 5s infinite;
+  animation: flower2-falling 5s 5s infinite;
 }
 
 .flower2-container--4 {
@@ -180,37 +180,94 @@ marquee {
 .flower2-container--5 {
   left: 50%;
   transform: rotate reverse (10deg);
-  animation: flower2-falling 15s 13s infinite;
+  animation: flower2-falling 6s 13s infinite;
 }
 
 .flower2-container--6 {
   left: 60%;
-  animation: flower2-falling 18s 7s infinite;
+  animation: flower2-falling 10s 7s infinite;
 }
 
 .flower2-container--7 {
   left: 70%;
-  animation: flower2-falling 15s 9s infinite;
+  animation: flower2-falling 6s 9s infinite;
 }
 
 .flower2-container--8 {
-  left: 80%;
+  left: 55%;
   animation: flower2-falling 15s 7s infinite;
 }
 
 .flower2-container--9 {
-  left: 80%;
-  animation: flower2-falling 12s 2s infinite;
+  left: 65%;
+  animation: flower2-falling 8s 2s infinite;
 }
 
 .flower2-container--10 {
-  left: 80%;
+  left: 69%;
   animation: flower2-falling 10s 4s infinite;
 }
 
 .flower2-container--11 {
-  left: 80%;
+  left: 73%;
   animation: flower2-falling 8s 3s infinite;
+}
+
+
+
+.flower2-container--12 {
+  left: 20%;
+  animation: flower2-falling 10s 1s infinite;
+}
+
+.flower2-container--13 {
+  left: 10%;
+  animation: flower2-falling 4s 1s infinite;
+}
+
+.flower2-container--14 {
+  left: 23%;
+  animation: flower2-falling 9s 1s infinite;
+}
+
+.flower2-container--15 {
+  left: 42%;
+  animation: flower2-falling 9.5s 1s infinite;
+}
+
+.flower2-container--16 {
+  left: 78%;
+  animation: flower2-falling 8s 13s infinite;
+}
+
+.flower2-container--17 {
+  left: 34%;
+  animation: flower2-falling 5s 13s infinite;
+}
+
+.flower2-container--18 {
+  left: 26%;
+  animation: flower2-falling 8.5s 7s infinite;
+}
+
+.flower2-container--19 {
+  left: 53%;
+  animation: flower2-falling 5s 20s infinite;
+}
+
+.flower2-container--20 {
+  left: 30%;
+  animation: flower2-falling 11s 17s infinite;
+}
+
+.flower2-container--21 {
+  left: 15%;
+  animation: flower2-falling 10s 15s infinite;
+}
+
+.flower2-container--22 {
+  left: 40%;
+  animation: flower2-falling 9s 15s infinite;
 }
 
 /* Keyframes no.3 start, below */
