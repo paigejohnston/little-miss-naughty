@@ -1,4 +1,11 @@
 /* Format for applying styling rules */
+
+:root {
+  --font-title: 24px;
+  --grad-start: 280;
+  --grad-end:   40;
+}
+
 [selector] {
   [property]: [value];
 }
@@ -8,26 +15,64 @@ html {
   height:200%;
   margin:0;
 }
-/* Global Styles go here. TEXT ALIGN not working and HEIGHT of gadient background*/
-.body {
-  margin: 0;
-  padding: 0;
-  height:200%;
-  overflow: hidden;
-  position: absolute;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight:bold;
-  text-align: center;
+
+body {
+  display:         flex;
+  justify-content: center;
+  align-items:     center;
+  margin:0;
+  height:  200vh;
+  cursor: url("../assets/lmn-cursor.png") -20 0, pointer;
+
+  background: linear-gradient(
+    135deg,
+    hsl(var(--grad-start), 100%, 75%),
+    hsl(var(--grad-end), 100%, 50%)
+  );
+}
+
+* {
+  cursor: url("../assets/lmn-cursor.png") -20 0, pointer;
 }
 
 img {
   width: 100%;
 }
 
-/* CURSOR */
 
-body {
-  cursor: url("../assets/lmn-cursor.png") 0 0, pointer;
+.p {
+  counter-reset:
+    hueStart var(--grad-start)
+    hueEnd var(--grad-end);
+
+  position:       relative;
+  padding:        5px 10px;
+  border:         1px solid currentColor;
+  border-radius:  var(--font-title);
+  font:           100 var(--font-title)/1 sans-serif;
+  text-align:     center;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color:          #fff;
+
+  &::before, &::after {
+    position:             absolute;
+    display:              block;
+    width:                100%;
+    padding:              5px;
+    font-size:            12px;
+    font-variant-numeric: tabular-nums;
+    color:                #fff;
+  }
+
+  &::before {
+    content: 'hsl(' counter(hueStart) ', 100%, 75%)';
+    bottom:  100%;
+  }
+  &::after {
+    content: 'hsl(' counter(hueEnd) ', 100%, 50%)';
+    top:     100%;
+  }
 }
 
 /* Marquee */
@@ -46,6 +91,7 @@ body {
   position:fixed;
   top: 0;
   right: 0;
+  cursor: url("../assets/lmn-cursor.png") -20 0, pointer;
 }
 
 marquee {
@@ -54,7 +100,6 @@ marquee {
   overflow: visable;
   height:100vh;
   text-align: center;
-  height:200vh;
   position:relative;
 }
 
@@ -73,13 +118,14 @@ marquee {
 /* Marquee ENDS */
 
 
-/* Images/Gifs are placed */
+/* FLOWERS are placed */
 
+/*LARGEST FLOWER*/
 .flower-container {
   width: 10%;
   position:absolute;
   top: -20vh;
-  animation: flower-falling 5s infinite;
+  /* animation: flower-falling 5s infinite; */
   z-index: auto;
 }
 
@@ -88,8 +134,16 @@ marquee {
     top: -20vh;
   }
 
+  97% {
+    top: 185vh;
+  }
+
+  99% {
+    top: 188vh;
+  }
+
   100% {
-    top: 210vh;
+    top: 185vh;
   }
 }
 
@@ -134,10 +188,11 @@ marquee {
 }
 
 
-/* Falling flower no.2 starts below*/
 
-.flower2-container {
-  width: 10%;
+ /*Falling flower no.2 starts below*/
+ /*2nd biggest flower*/
+.flower-container2 {
+  width: 5%;
   position:absolute;
   top: -20vh;
   z-index: auto;
@@ -145,214 +200,661 @@ marquee {
 
 @keyframes flower2-falling {
   0% {
-    top: -30vh;
+    top: -20vh;
+  }
+
+  97% {
+    top: 186vh;
+  }
+
+  99% {
+    top: 188vh;
   }
 
   100% {
-    top: 210vh;
+    top: 194vh;
   }
 }
 
-.flower2-container--1 {
+.flower-container2--1 {
   left: 10%;
   transform: rotate(270deg);
     animation: flower2-falling 8s 2s infinite;
 }
 
-.flower2-container--2 {
+.flower-container2--2 {
   left: 20%;
   transform: rotate(170deg);
     animation: flower2-falling 10s 4s infinite;
 }
 
-.flower2-container--3 {
+.flower-container2--3 {
   left: 30%;
   transform: rotate(60deg);
   animation: flower2-falling 5s 5s infinite;
 }
 
-.flower2-container--4 {
+.flower-container2--4 {
   left: 40%;
   transform: rotate(20deg);
   animation: flower2-falling 12s infinite;
 }
 
-.flower2-container--5 {
+.flower-container2--5 {
   left: 50%;
   transform: rotate reverse (10deg);
   animation: flower2-falling 6s 13s infinite;
 }
 
-.flower2-container--6 {
+.flower-container2--6 {
   left: 60%;
   animation: flower2-falling 10s 7s infinite;
 }
 
-.flower2-container--7 {
+.flower-container2--7 {
   left: 70%;
   animation: flower2-falling 6s 9s infinite;
 }
 
-.flower2-container--8 {
+.flower-container2--8 {
   left: 55%;
   animation: flower2-falling 15s 7s infinite;
 }
 
-.flower2-container--9 {
+.flower-container2--9 {
   left: 65%;
   animation: flower2-falling 8s 2s infinite;
 }
 
-.flower2-container--10 {
+.flower-container2--10 {
   left: 69%;
   animation: flower2-falling 10s 4s infinite;
 }
 
-.flower2-container--11 {
+.flower-container2--11 {
   left: 73%;
   animation: flower2-falling 8s 3s infinite;
 }
 
-
-
-.flower2-container--12 {
+.flower-container2--12 {
   left: 20%;
   animation: flower2-falling 10s 1s infinite;
 }
 
-.flower2-container--13 {
+.flower-container2--13 {
   left: 10%;
   animation: flower2-falling 4s 1s infinite;
 }
 
-.flower2-container--14 {
+.flower-container2--14 {
   left: 23%;
   animation: flower2-falling 9s 1s infinite;
 }
 
-.flower2-container--15 {
+.flower-container2--15 {
   left: 42%;
   animation: flower2-falling 9.5s 1s infinite;
 }
 
-.flower2-container--16 {
+.flower-container2--16 {
   left: 78%;
   animation: flower2-falling 8s 13s infinite;
 }
 
-.flower2-container--17 {
+.flower-container2--17 {
   left: 34%;
   animation: flower2-falling 5s 13s infinite;
 }
 
-.flower2-container--18 {
+.flower-container2--18 {
   left: 26%;
   animation: flower2-falling 8.5s 7s infinite;
 }
 
-.flower2-container--19 {
+.flower-container2--19 {
   left: 53%;
   animation: flower2-falling 5s 20s infinite;
 }
 
-.flower2-container--20 {
+.flower-container2--20 {
   left: 30%;
   animation: flower2-falling 11s 17s infinite;
 }
 
-.flower2-container--21 {
+.flower-container2--21 {
   left: 15%;
   animation: flower2-falling 10s 15s infinite;
 }
 
-.flower2-container--22 {
+.flower-container2--22 {
   left: 40%;
   animation: flower2-falling 9s 15s infinite;
 }
 
-/* Keyframes no.3 start, below */
 
 
+ /*Keyframes no.3 start, below*/
+ /*2nd smallest flower*/
+.flower-container3 {
+  width: 2%;
+  position:absolute;
+  top: -20vh;
+  z-index: auto;
+}
+
+@keyframes flower3-falling {
+  0% {
+    top: -20vh;
+  }
+
+  97% {
+    top: 186vh;
+  }
+
+  99% {
+    top: 188vh;
+  }
+
+  100% {
+    top: 194vh;
+  }
+}
+
+.flower-container3--1 {
+  left: 15%;
+  transform: rotate(270deg);
+    animation: flower3-falling 10s 6s infinite;
+}
+
+.flower-container3--2 {
+  left: 25%;
+  transform: rotate(270deg);
+    animation: flower3-falling 9s 8s infinite;
+}
+
+.flower-container3--3 {
+  left: 45%;
+  transform: rotate(270deg);
+    animation: flower3-falling 20s 4s infinite;
+}
+
+.flower-container3--4 {
+  left: 65%;
+  transform: rotate(270deg);
+    animation: flower3-falling 18s 1s infinite;
+}
+
+.flower-container3--5 {
+  left: 5%;
+  transform: rotate(270deg);
+    animation: flower3-falling 3s 8s infinite;
+}
+
+.flower-container3--6 {
+  left: 7%;
+  transform: rotate(270deg);
+    animation: flower3-falling 12s 1s infinite;
+}
+
+.flower-container3--7 {
+  left: 9%;
+  transform: rotate(270deg);
+    animation: flower3-falling 20s 1s infinite;
+}
+
+.flower-container3--8 {
+  left: 10%;
+  transform: rotate(270deg);
+    animation: flower3-falling 7s 4s infinite;
+}
+
+.flower-container3--9 {
+  left: 25%;
+  transform: rotate(270deg);
+    animation: flower3-falling 9s 2s infinite;
+}
+
+.flower-container3--10 {
+  left: 38%;
+  transform: rotate(270deg);
+    animation: flower3-falling 9s 6s infinite;
+}
 
 
+/*Keyframes no.4 start, below*/
+/*SMALLEST flower*/
+.flower-container4 {
+ width: 1%;
+ position:absolute;
+ top: -20vh;
+ z-index: auto;
+}
+
+@keyframes flower4-falling {
+ 0% {
+   top: -10vh;
+ }
+
+ 97% {
+   top: 186vh;
+ }
+
+ 99% {
+   top: 188vh;
+ }
+
+ 100% {
+   top: 194vh;
+ }
+}
+
+.flower-container4--1 {
+ left: 15%;
+ transform: rotate(270deg);
+   animation: flower4-falling 11s 4s infinite;
+}
+
+.flower-container4--2 {
+ left: 25%;
+ transform: rotate(270deg);
+   animation: flower4-falling 7s 4s infinite;
+}
+
+.flower-container4--3 {
+ left: 65%;
+ transform: rotate(270deg);
+   animation: flower4-falling 14s 1s infinite;
+}
+
+.flower-container4--4 {
+ left: 65%;
+ transform: rotate(270deg);
+   animation: flower4-falling 9s 1s infinite;
+}
+
+.flower-container4--5 {
+ left: 5%;
+ transform: rotate(270deg);
+   animation: flower4-falling 5s 3s infinite;
+}
+
+.flower-container4--6 {
+ left: 67%;
+ transform: rotate(270deg);
+   animation: flower4-falling 7s 4s infinite;
+}
+
+.flower-container4--7 {
+ left: 9%;
+ transform: rotate(270deg);
+   animation: flower4-falling 9s 9s infinite;
+}
+
+.flower-container4--8 {
+ left: 10%;
+ transform: rotate(270deg);
+   animation: flower4-falling 6s 9s infinite;
+}
+
+.flower-container4--9 {
+ left: 25%;
+ transform: rotate(270deg);
+   animation: flower4-falling 18s 7s infinite;
+}
+
+.flower-container4--10 {
+ left: 68%;
+ transform: rotate(270deg);
+   animation: flower4-falling 16s 1s infinite;
+}
+...............
+.flower-container4--11 {
+ left: 48%;
+ transform: rotate(270deg);
+   animation: flower4-falling 18s 3s infinite;
+}
+
+.flower-container4--12 {
+ left: 55%;
+ transform: rotate(270deg);
+   animation: flower4-falling 6s 2s infinite;
+}
+
+.flower-container4--13 {
+ left: 28%;
+ transform: rotate(270deg);
+   animation: flower4-falling 9s 10s infinite;
+}
+
+.flower-container4--14 {
+ left: 38%;
+ transform: rotate(270deg);
+   animation: flower4-falling 7s 8s infinite;
+}
+
+.flower-container4--15 {
+ left: 65%;
+ transform: rotate(270deg);
+   animation: flower4-falling 13s 3s infinite;
+}
+
+.flower-container4--16 {
+ left: 70%;
+ transform: rotate(270deg);
+   animation: flower4-falling 6.5s 5s infinite;
+}
+
+.flower-container4--17 {
+ left: 75%;
+ transform: rotate(270deg);
+   animation: flower4-falling 17s 3s infinite;
+}
+
+.flower-container4--18 {
+ left: 48%;
+ transform: rotate(270deg);
+   animation: flower4-falling 14s 3s infinite;
+}
+
+.flower-container4--19 {
+ left: 38%;
+ transform: rotate(270deg);
+   animation: flower4-falling 12.3s 18s infinite;
+}
+
+.flower-container4--20 {
+ left: 18%;
+ transform: rotate(270deg);
+   animation: flower4-falling 15.5s 14s infinite;
+}
+
+.flower-container4--21 {
+ left: 68%;
+ transform: rotate(270deg);
+   animation: flower4-falling 17.5s 3s infinite;
+}
+
+.flower-container4--22 {
+ left: 59%;
+ transform: rotate(270deg);
+   animation: flower4-falling 8s 20s infinite;
+}
+
+.flower-container4--23 {
+ left: 73%;
+ transform: rotate(270deg);
+   animation: flower4-falling 4s 12s infinite;
+}
+
+.flower-container4--24 {
+ left: 30%;
+ transform: rotate(270deg);
+   animation: flower4-falling 21.2s 2s infinite;
+}
+
+.flower-container4--25 {
+ left: 30%;
+ transform: rotate(270deg);
+   animation: flower4-falling 25s 8s infinite;
+}
+
+.flower-container4--26 {
+ left: 17%;
+ transform: rotate(270deg);
+   animation: flower4-falling 16.2s 5s infinite;
+}
+
+.flower-container4--27 {
+ left: 65%;
+ transform: rotate(270deg);
+   animation: flower4-falling 18.5s 3s infinite;
+}
+
+.flower-container4--28 {
+ left: 39%;
+ transform: rotate(270deg);
+   animation: flower4-falling 17s 1s infinite;
+}
+
+.flower-container4--29 {
+ left: 32%;
+ transform: rotate(270deg);
+   animation: flower4-falling 22s 2s infinite;
+}
+
+.flower-container4--30 {
+ left: 38%;
+ transform: rotate(270deg);
+   animation: flower4-falling 30s 3s infinite;
+}
+
+
+/* MEDIUM SIZED FLOWERS-want slower*/
+.flower-container5 {
+  width: 7%;
+  position:absolute;
+  top: -20vh;
+  z-index: auto;
+}
+
+@keyframes flower5-falling {
+  0% {
+    top: -20vh;
+  }
+
+  97% {
+    top: 186vh;
+  }
+
+  99% {
+    top: 188vh;
+  }
+
+  100% {
+    top: 194vh;
+  }
+}
+
+.flower-container5--1 {
+  left: 10%;
+  transform: rotate(270deg);
+    animation: flower5-falling 8s 2s infinite;
+}
+
+.flower-container5--2 {
+  left: 13%;
+  transform: rotate(170deg);
+    animation: flower5-falling 10s 4s infinite;
+}
+
+.flower-container5--3 {
+  left: 15%;
+  transform: rotate(60deg);
+  animation: flower5-falling 8s 5s infinite;
+}
+
+.flower-container5--4 {
+  left: 17%;
+  transform: rotate(20deg);
+  animation: flower5-falling 12s infinite;
+}
+
+.flower-container5--5 {
+  left: 19%;
+  transform: rotate reverse (10deg);
+  animation: flower5-falling 9s 13s infinite;
+}
+
+.flower-container5--6 {
+  left: 23%;
+  animation: flower5-falling 10s 7s infinite;
+}
+
+.flower-container5--7 {
+  left: 27%;
+  animation: flower5-falling 6s 3s infinite;
+}
+
+.flower-container5--8 {
+  left: 30%;
+  animation: flower5-falling 9.5s 2s infinite;
+}
+
+.flower-container5--9 {
+  left: 35%;
+  animation: flower5-falling 5.8s 1s infinite;
+}
+
+.flower-container5--10 {
+  left: 37%;
+  animation: flower5-falling 11.3s 1s infinite;
+}
+
+.flower-container5--11 {
+  left: 37%;
+  animation: flower5-falling 12s 5s infinite;
+}
+
+.flower-container5--12 {
+  left: 38%;
+  animation: flower5-falling 10s 5s infinite;
+}
+
+.flower-container5--13 {
+  left: 39.5%;
+  animation: flower5-falling 10s 9s infinite;
+}
+
+.flower-container5--14 {
+  left: 42%;
+  animation: flower5-falling 8.5s 15s infinite;
+}
+
+.flower-container5--15 {
+  left: 44%;
+  animation: flower5-falling 9.5s 11s infinite;
+}
+
+.flower-container5--16 {
+  left: 46.5%;
+  animation: flower5-falling 5.3s 13s infinite;
+}
+
+.flower-container5--17 {
+  left: 48%;
+  animation: flower5-falling 4.8s 8s infinite;
+}
+
+.flower-container5--18 {
+  left: 49.5%;
+  animation: flower5-falling 6s 3s infinite;
+}
+
+.flower-container5--19 {
+  left: 52%;
+  animation: flower5-falling 8s 20s infinite;
+}
+
+.flower-container5--20 {
+  left: 52%;
+  animation: flower5-falling 6s 17s infinite;
+}
+
+.flower-container5--21 {
+  left: 54%;
+  animation: flower5-falling 10s 25s infinite;
+}
+
+.flower-container5--22 {
+  left: 50%;
+  animation: flower5-falling 12s 23s infinite;
+}
+
+.flower-container5--23 {
+  left: 56%;
+  animation: flower5-falling 15s 12s infinite;
+}
+
+.flower-container5--24 {
+  left: 58.5%;
+  animation: flower5-falling 14s 23s infinite;
+}
+
+.flower-container5--25 {
+  left: 60%;
+  animation: flower5-falling 14s 3s infinite;
+}
+
+.flower-container5--26 {
+  left: 61%;
+  animation: flower5-falling 6s 20s infinite;
+}
+
+.flower-container5--27 {
+  left: 63%;
+  animation: flower5-falling 13s 12s infinite;
+}
+
+.flower-container5--28 {
+  left: 63.5%;
+  animation: flower5-falling 10s 15s infinite;
+}
+
+.flower-container5--29 {
+  left: 65%;
+  animation: flower5-falling 11s 4s infinite;
+}
+
+.flower-container5--30 {
+  left: 40%;
+  animation: flower5-falling 4s 3s infinite;
+}
+
+.flower-container5--31 {
+  left: 60%;
+  animation: flower5-falling 5s 5s infinite;
+}
+
+.flower-container5--32 {
+  left: 72%;
+  animation: flower5-falling 5s 9s infinite;
+}
+
+.flower-container5--33 {
+  left: 40%;
+  animation: flower5-falling 12s 14s infinite;
+}
+
+.flower-container5--34 {
+  left: 27%;
+  animation: flower5-falling 13s 16s infinite;
+}
+
+.flower-container5--35 {
+  left: 20%;
+  animation: flower5-falling 15s 3s infinite;
+}
+
+.flower-container5--36 {
+  left: 50%;
+  animation: flower5-falling 15s 5s infinite;
+}
+
+.flower-container5--37 {
+  left: 40%;
+  animation: flower5-falling 7s 16s infinite;
+}
+
+.flower-container5--38 {
+  left: 70%;
+  animation: flower5-falling 10s 1s infinite;
+}
+
+.flower-container5--39 {
+  left: 73%;
+  animation: flower5-falling 9s 6s infinite;
+}
 
 
 
 /* rotating flowers END*/
-
-
-
-/* NOT WORKING */
-.lmc-container {
-  width:80%;
-  height:80%;
-  position:absolute;
-  top:15%;
-  right:10%;
-  z-index: auto;
-  background-color: ;
-}
-
-
-
-
-/* Images/Giffs END */
-
-/* Gradient changing background */
-
-:root {
-  --font-title: 24px;
-  --grad-start: 280;
-  --grad-end:   40;
-}
-
-body {
-  display:         flex;
-  justify-content: center;
-  align-items:     center;
-  margin:0;
-  height:  200vh;
-
-  background: linear-gradient(
-    135deg,
-    hsl(var(--grad-start), 100%, 75%),
-    hsl(var(--grad-end), 100%, 50%)
-  )
-}
-
-.p {
-  counter-reset:
-    hueStart var(--grad-start)
-    hueEnd var(--grad-end);
-
-  position:       relative;
-  padding:        5px 10px;
-  border:         1px solid currentColor;
-  border-radius:  var(--font-title);
-  font:           100 var(--font-title)/1 sans-serif;
-  text-align:     center;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  color:          #fff;
-
-  &::before, &::after {
-    position:             absolute;
-    display:              block;
-    width:                100%;
-    padding:              5px;
-    font-size:            12px;
-    font-variant-numeric: tabular-nums;
-    color:                #fff;
-  }
-
-  &::before {
-    content: 'hsl(' counter(hueStart) ', 100%, 75%)';
-    bottom:  100%;
-  }
-  &::after {
-    content: 'hsl(' counter(hueEnd) ', 100%, 50%)';
-    top:     100%;
-  }
-}
-
-/* Gradient changing background ENDS */

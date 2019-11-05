@@ -12,4 +12,4 @@ document.addEventListener('mousemove', (e) => {
 
   setStyle('--grad-start', gradStart)
   setStyle('--grad-end', gradEnd)
-})
+});
