@@ -22,7 +22,6 @@ body {
   align-items:     center;
   margin:0;
   height:  200vh;
-  cursor: url("../assets/lmn-cursor.png") -20 0, pointer;
 
   background: linear-gradient(
     135deg,
@@ -32,11 +31,31 @@ body {
 }
 
 * {
-  cursor: url("../assets/lmn-cursor.png") -20 0, pointer;
+  cursor: url("../assets/lmn-cursor.png") -1 0, pointer;
+}
+
+a {
+  text-decoration: none;
+  font-size: 20pt;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight:bold;
+}
+
+a:hover {
+  color: green;
+  text-decoration: none;
 }
 
 img {
-  width: 100%;
+  width: 80%;
+}
+
+.instagram-container-text {
+  width: 5%;
+  position:fixed;
+  left:3%;
+  bottom: 3%;
+  z-index: 50;
 }
 
 
